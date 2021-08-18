@@ -56,12 +56,33 @@ function numberValidate(e){
 
    if(regXpNew.test(fInput)){
      
-     document.querySelector('.display').style.display = 'none';
+    //  document.querySelector('.display').style.display = 'none';
      fname.classList.add('success');
      fname.classList.remove('failure');
   }else {
-    document.querySelector('.display').style.display = '';
+    // document.querySelector('.display').style.display = '';
     fname.classList.remove('success');
         fname.classList.add('failure');
+  }
+}
+
+// phone number
+
+const cnumber = document.querySelector('.cnumber');
+cnumber.addEventListener('input', contactValidate);
+
+function contactValidate (e){
+  const cinput = e.target.value;
+  const regXpC = /^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{2,3}[-\s\.]?[0-9]{3,4}?[0-9]{3,4}$/im;
+  const regXpNew = /^[a-zA-Z]*$/g;
+  const minNumber = 10;
+  const maxNumber = 11;
+
+  if(!regXpNew.test(cinput) && regXpC.test(cinput)){
+    cnumber.classList.add('success');
+    cnumber.classList.remove('failure');
+  }else {
+    cnumber.classList.remove('success');
+    cnumber.classList.add('failure');
   }
 }

@@ -17,7 +17,8 @@ body {
 }
 .email,
 .user,
-.fname {
+.fname,
+.cnumber {
   margin-top: 10px;
   border-radius: 6px;
   border: 0;
@@ -28,12 +29,14 @@ body {
 }
 .email:focus,
 .user:focus,
-.fname:focus {
+.fname:focus,
+.cnumber:focus {
   outline: none;
 }
 .email::placeholder,
 .user::placeholder,
-.fname::placeholder {
+.fname::placeholder,
+.cnumber::placeholder {
   color: rgba(255, 255, 255, 0.35);
 }
 .failure {
