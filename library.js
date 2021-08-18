@@ -35,7 +35,7 @@ function inputuser(e){
     const maxNumberChar = 16;
     const regXp = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
     
-    console.log(input, ' ', format.test(input));
+    // console.log(input, ' ', format.test(input));
     if(input.length > minNumberChar && input.length < maxNumberChar && !regXp.test(input)){
         user.classList.add('success');
         user.classList.remove('failure');
@@ -45,3 +45,23 @@ function inputuser(e){
     }  
 }
 
+// only letters validation
+
+const fname = document.querySelector('.fname');
+fname.addEventListener('input', numberValidate);
+
+function numberValidate(e){
+  const fInput = e.target.value;
+  const regXpNew = /^[a-zA-Z]*$/g;
+
+   if(regXpNew.test(fInput)){
+     
+     document.querySelector('.display').style.display = 'none';
+     fname.classList.add('success');
+     fname.classList.remove('failure');
+  }else {
+    document.querySelector('.display').style.display = '';
+    fname.classList.remove('success');
+        fname.classList.add('failure');
+  }
+}

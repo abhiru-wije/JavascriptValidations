@@ -16,7 +16,8 @@ body {
   align-items: center;
 }
 .email,
-.user {
+.user,
+.fname {
   margin-top: 10px;
   border-radius: 6px;
   border: 0;
@@ -26,11 +27,13 @@ body {
   color: rgba(255, 255, 255, 1);
 }
 .email:focus,
-.user:focus {
+.user:focus,
+.fname:focus {
   outline: none;
 }
 .email::placeholder,
-.user::placeholder {
+.user::placeholder,
+.fname::placeholder {
   color: rgba(255, 255, 255, 0.35);
 }
 .failure {
@@ -39,3 +42,6 @@ body {
 .success {
   border: 2px solid rgba(0, 255, 0, 0.6);
 }
+/* .display {
+  display: none;
+} */
