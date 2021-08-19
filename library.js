@@ -73,12 +73,10 @@ cnumber.addEventListener('input', contactValidate);
 
 function contactValidate (e){
   const cinput = e.target.value;
-  const regXpC = /^[\+]?[(]?[0-9]{2}[)]?[-\s\.]?[0-9]{2,3}[-\s\.]?[0-9]{3,4}?[0-9]{3,4}$/im;
-  const regXpNew = /^[a-zA-Z]*$/g;
-  const minNumber = 10;
-  const maxNumber = 11;
+  const regXpC = /^[\+]?[(]?[0-9]{0,2}[)]?[-\s\.]?[0-9]{2,3}[-\s\.]?[0-9]{3,4}?[0-9]{3,4}$/im;
+  const regXpNew = /^\d+(\.\d*)?$|^\.\d+$/;
 
-  if(!regXpNew.test(cinput) && regXpC.test(cinput)){
+  if(regXpNew.test(cinput) && regXpC.test(cinput)){
     cnumber.classList.add('success');
     cnumber.classList.remove('failure');
   }else {
